@@ -1,0 +1,2 @@
+nil:类似NULL，但可以传递信息给nil,例如[nil message];
+BOOL:YES/NO,而不是TRUE/FALSE;

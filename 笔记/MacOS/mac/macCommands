@@ -1,0 +1,65 @@
+1)Mac下把docx转换为doc文件方法：
+	textutil -convert doc /path/filename.docx
+2)剪切板操作快捷键：
+	command+c：复制；
+	comand+v：粘贴；
+	comand_option+v:剪切
+	command+z：撤销；
+	shift+command+z:重做
+	fn+delete:向后删除
+2)文件类快捷键：
+	粘贴，并删除原文件夹：command+option+v
+	删除文件：command+delete
+	还原文件：废纸篓中选中，command+delete;
+	清空垃圾桶：command+delete+shift;
+	强制清空垃圾桶：command+option+delete+shift;
+	快捷方式：右键->制作替身,拖动替身到目标位置
+	显示隐藏文件:⌘⇧.(Command + Shift + .)
+	按内容搜索:command+f
+		参考文献:https://cloud.tencent.com/developer/news/279180
+3)文件夹操作：
+	前进：command+]
+	后退：command+[
+	个人文件夹：command+shift+h(同safari打开主页快捷键)
+4)窗口类快捷键：
+	最大化(还原)窗口：control+command+f;
+	最小化当前窗口：command+m;
+	最小化当前应用所有窗口：command+option+m;之后每次还原一个窗口；
+	快速隐藏当前应用所有窗口：command+h;之后点击还原该应用所有窗口；
+	快速隐藏除当前应用之外的所有程序窗口：command+option+h;之后还原所点击应用的所有窗口；	
+	快速隐藏所用应用窗口：command+option+m+h;之后还原所点击应用的所有窗口;
+	关闭窗口：command+w;
+	关闭应用：command+q;
+5)截屏类：
+	全屏:command+shift+3;
+	指定区域接图:command+shift+4;
+6)route:
+	获取路由信息：route get www.baidu.com
+7)命令行终端快捷键：
+	i）光标移动：
+		行首：ctrl+a;
+		行尾：ctrl+e;
+		单词为单位移动：option+方向键盘;
+	ii)清除屏幕 ：ctrl+l; 
+	iii):清除当前行：ctrl+u;
+	vi):清除至当前行尾：ctrl+k;
+	vii):搜索以前使用的命令：ctrl+r;
+8)光标类：
+	文件尾：fn+右箭头
+	文件头：fn+左箭头
+二、软件操作类：
+1.safari快捷键
+	Command+L   前往URL地址栏，填写新的网址或进行搜索
+    Command+T   开启新的浏览器标签页
+    Command+W 关闭当前标签页
+    Command+R   刷新当前标签页
+    Command+.    停止载入当前标签页
+2.文本编辑：
+	格式化：
+		1）复制样式：选中要采用的样式，按option+command+c
+		2）粘贴样式；选中要应用的样式，按option+command+v
+3.pycharm快捷键：
+	1)上一个光标位置:alt+command+左箭头
+	2)下一个光标位置:alt+command+右箭头
+4.smartSvn基本操作：
+	https://blog.csdn.net/dear_zx/article/details/78775088
