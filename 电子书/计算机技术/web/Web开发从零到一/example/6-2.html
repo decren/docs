@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>DOM遍历</title>
+<style>
+.TestTitle{
+	background-color:#EEEEEE;border:#999999 1px solid;
+	font-size:12px;	margin:5px;
+}
+.TestTitleRed{
+	background-color:#FFCCCC;border:#999999 1px solid;
+	font-size:12px;	margin:5px;
+}
+</style>
+</head>
+<body>
+<div id="ARootId">
+	<div>第一</div>
+    <div>第二</div>
+    <div>第三</div>
+    <div>第四</div>
+</div>
+<script>
+var objRoot = document.getElementById("ARootId");
+if(objRoot){
+	var objIterator = objRoot.firstChild;
+	while(objIterator){ //开始遍历所有子节点，并设置上css样式
+		objIterator.className = "TestTitle";
+		objIterator = objIterator.nextSibling;
+	}
+}
+//下面的代码是往“第二”和“第三节”点里插一个新节点。
+if(objRoot){
+	var objNew = document.createElement("DIV");//创建一个新的DIV OBJ
+	objNew.className = "TestTitleRed";  //新节点的css样式设置完成。
+	objNew.innerHTML = "我是新来的"; //新节点的内容准备完成。
+	
+	var objTarget = objRoot.firstChild;    //objTarget 为“第一”
+	objTarget = objTarget.nextSibling; //objTarget 为 “第二”
+	objTarget = objTarget.nextSibling; //objTarget 为 “第三”
+	
+	var objParent = objTarget.parentNode; //获取objTarget的父节点；
+	objParent.insertBefore(objNew,objTarget); //新节点插入完成。
+}
+</script>
+</body>
+</html>

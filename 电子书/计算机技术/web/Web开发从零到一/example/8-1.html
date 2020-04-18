@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>综合应用</title>
+<style>
+div{
+	margin:10px;
+	width:300px;
+	padding:5px;
+	border:#EEEEEE 1px solid;
+}
+
+body{
+	font-size:12px;
+}
+
+.mobileinput{
+	border:#CCCCCC 1px solid;
+}
+
+.checkbutton{
+	border:#CCCCCC 1px solid;
+	margin-left:5px;
+}
+
+</style>
+
+<script>
+var g_iIndex =0;
+
+var G_MOBILE_REG = /^[1][35][\d]+$/;
+
+function OverColor(obj){
+	if(obj){
+		obj.style.backgroundColor = "#DDDDDD";
+	}
+}
+
+function OutColor(obj){
+	if(obj){
+		obj.style.backgroundColor = "#FFFFFF";
+	}
+}
+
+function CheckMobile(iIndex){
+
+	var strId = "MobileId"+iIndex;
+	var objMobileInput = document.getElementById(strId);
+	if(objMobileInput){
+		if(objMobileInput.value.length != 11){
+			alert("手机号码长度不正确！");
+			return false;
+		}
+		
+		
+		if(!G_MOBILE_REG.test(objMobileInput.value)){
+			alert("手机号码格式不正确！");
+			return false;
+		}
+		
+		alert("手机号码校验成功");
+	}
+	
+}
+
+function AddRow(){
+
+	var objRoot = document.getElementById("InputRowsId");
+	if(objRoot){
+		g_iIndex ++;
+		var objDiv = document.createElement("DIV");
+		objDiv.onmouseover = function(){ OverColor(objDiv) }; //这里临时创建了一个function对象来把objDiv对象作为参数传进去了。
+		objDiv.onmouseout  = function(){ OutColor(objDiv) };
+		
+		var objSpan = document.createElement("SPAN");
+		objSpan.innerHTML = "手机"+g_iIndex+":";
+		objDiv.appendChild(objSpan);
+		
+		var objInput = document.createElement("INPUT");
+		objInput.type = "text";
+		objInput.id   = "MobileId"+g_iIndex;
+		objInput.className = "mobileinput";
+		objInput.maxlength = 11;
+		objInput.name = "mobile"+g_iIndex;
+		objDiv.appendChild(objInput);
+		
+		var objCheck = document.createElement("INPUT");
+		objCheck.type = "button";
+		objCheck.className = "checkbutton";
+		objCheck.value = "check";
+		objCheck.onclick = function(){ CheckMobile(g_iIndex) };
+		objDiv.appendChild(objCheck);		
+		
+		objRoot.appendChild(objDiv);
+	}
+}
+</script>
+</head>
+<body>
+<div id="InputRowsId">
+    <div onMouseOver="OverColor(this);" onMouseOut="OutColor(this);">
+    	<span>手机0:</span><input type="text" class="mobileinput" maxlength="11" name="mobile0" id="MobileId0" /><input type="button" value="check" class="checkbutton" onClick="CheckMobile(0);"/>
+    </div>   
+</div>
+<input type="button" value="点这里增加一行输入" onClick="AddRow();" class="checkbutton"/>
+</body>
+</html>

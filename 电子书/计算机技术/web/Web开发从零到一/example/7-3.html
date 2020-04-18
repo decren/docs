@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>时间循环处理</title>
+<script>
+var g_objTimeFun = null;
+var g_iIndex = 0;
+
+function MotionRun(){
+	var objRoot = document.getElementById("RootId");
+	if(objRoot){
+		g_iIndex ++;
+		objRoot.innerHTML = g_iIndex;
+	}
+}
+
+function MotionStart(){
+	//设置执行间隔
+	g_objTimeFun = setInterval(MotionRun,100);
+}
+
+function MotionEnd(){
+	if(g_objTimeFun){
+		//清除时间触发
+		clearInterval(g_objTimeFun);
+	}
+}
+</script>
+</head>
+<body>
+<div id="RootId">0</div>
+<input type="button" value="Start" onClick="MotionStart()"/>
+<input type="button" value="Stop" onClick="MotionEnd()"/>
+</body>
+</html>
