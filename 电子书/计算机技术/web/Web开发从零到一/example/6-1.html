@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>合体</title>
+<style>
+.TestTitle{
+	background-color:#EEEEEE;
+	border:#999999 1px solid;
+	font-size:16px;	
+}
+</style>
+</head>
+<body>
+<div id="TitleGoodId">我是好的标题</div>
+<div id="TitleBadId">我是坏标题</div>
+<script>
+var objTitleGood = document.getElementById("TitleGoodId");
+if(objTitleGood){
+	//显示obj类型
+	alert("objTitleGood的类型：" + objTitleGood); 
+	//显示obj的nodeName属性
+	alert("objTitleGood的标签名：" + objTitleGood.nodeName); 
+	//设置obj的css样式
+	objTitleGood.setAttribute("className","TestTitle");      
+	//objTitleGood.className = "TestTitle"; 
+	//如果这样写的话，和上一句setAttribute的效果是一样的
+}
+
+var objTitleBad = document.getElementById("TitleBadId");
+if(objTitleBad){
+	//这里控制了obj的css style里的display属性，让这个div隐藏了
+	objTitleBad.style.display = "none";
+}
+</script>
+</body>
+</html>

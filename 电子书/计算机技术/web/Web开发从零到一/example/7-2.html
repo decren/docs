@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>вш╨ор╩об</title>
+<script>
+function ChangeStyle(strObjId,strButtonId,strLogoId){
+	var objTarget = document.getElementById(strObjId);
+	var objButton = document.getElementById(strButtonId);
+	var objLogo   = document.getElementById(strLogoId);
+	if(objTarget && objButton && objLogo){
+		if(objTarget.style.display == "none"){
+			objButton.value = "Hide Me.";
+			objTarget.style.display = "";
+			objLogo.src = "http://pics.paipai.com/common/logo/logoV3.gif";
+		}
+		else{
+			objButton.value = "Show Me.";
+			objTarget.style.display = "none";
+			objLogo.src = "http://pics.paipai.com/common/logo/logoV3A.gif";
+		}
+	}
+}
+</script>
+</head>
+<body>
+<input type="button" id="TestButtonId" value="Hide Me" onclick="ChangeStyle('TestId','TestButtonId','LogoId');"/>
+<div><img src="http://pics.paipai.com/common/logo/logoV3.gif" id="LogoId" /></div>
+<div id="TestId"> I am Here.... -____-!! </div>
+</body>
+</html>

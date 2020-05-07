@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>事件绑定</title>
+<script>
+function ClickTest(){
+	alert("你点到我了");
+}
+</script>
+</head>
+<body>
+<input type="button" onClick="ClickTest();" value="赶紧点我1"/>
+<input type="button" id="clickbuttonid" value="赶紧点我2"/>
+<script>
+var objTestButton = document.getElementById("clickbuttonid");
+if(objTestButton){
+	objTestButton.attachEvent("onclick",ClickTest);//绑定事件。
+	//objTestButton.onclick=ClickTest;//绑定事件的另一种方法。	
+}
+</script>
+</body>
+</html>
